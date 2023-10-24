@@ -60,8 +60,6 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
                                                                 for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
             let color = color[indexPath.item - 1]
             cell.contentView.backgroundColor = color
-//            cell.title1.text = category1
-//            cell.title2.text = category3
             return cell
         }
     }
@@ -73,7 +71,9 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
             let navController = UINavigationController(rootViewController: customVC)
             present(navController, animated: true, completion: nil)
         } else {
-            print("카테고리 클릭")
+            let customVC = CategoryInnerViewController()
+            customVC.modalPresentationStyle = .fullScreen
+            navigationController?.pushViewController(customVC, animated: true)
         }
     }
 }
