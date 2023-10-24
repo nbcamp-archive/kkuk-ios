@@ -14,10 +14,12 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         return stackView
     }()
     
-    private lazy var titleImage: UILabel = {
-        let label = UILabel()
-        label.text = "ffffff"
-        return label
+    private lazy var titleImage: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(systemName: "plus")
+        imageView.tintColor = .background
+        imageView.image = image
+        return imageView
     }()
     
     private lazy var titleLabel: UILabel = {
@@ -63,7 +65,9 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         }
         
         titleImage.snp.makeConstraints { make in
-            make.top.equalTo(cancelModifyButton.snp.bottom).offset(contentView.bounds.height / 9)
+            make.top.equalTo(cancelModifyButton.snp.bottom)
+            make.width.equalTo(contentView.bounds.width / 3)
+            make.height.equalTo(contentView.bounds.width / 3)
             make.centerX.equalToSuperview()
         }
         
@@ -81,7 +85,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         
         contentView.layer.cornerRadius = 8.0
         contentView.layer.borderWidth = 0.1
-        contentView.layer.borderColor = UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 0.33).cgColor
+        contentView.layer.borderColor = UIColor.subgray1.cgColor
     }
     
     @available(*, unavailable)
