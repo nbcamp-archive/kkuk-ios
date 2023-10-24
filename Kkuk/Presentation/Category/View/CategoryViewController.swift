@@ -9,20 +9,21 @@ import SnapKit
 import UIKit
 
 class CategoryViewController: BaseUIViewController {
+    
+    private let sectionInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     private lazy var categoryCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width / 2) - 20, height: UIScreen.main.bounds.height / 4)
         layout.sectionInset = .zero
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
         collectionView.register(AddCategoryCollectionViewCell.self, forCellWithReuseIdentifier: "AddCategoryCollectionViewCell")
-        collectionView.contentInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
     
-    var color: [UIColor] = [.systemGray, .systemOrange, .systemYellow, .systemGreen]
+    var color: [UIColor] = [.systemGray, .systemOrange, .systemYellow, .systemGreen, .systemRed, .systemBlue, .systemMint, .systemPink]
     
     override func setUI() {
         view.addSubview(categoryCollectionView)
@@ -75,5 +76,30 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
             customVC.modalPresentationStyle = .fullScreen
             navigationController?.pushViewController(customVC, animated: true)
         }
+    }
+}
+
+extension CategoryViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int)
+    -> CGFloat {
+        20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int)
+    -> CGFloat {
+        20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width
+        let height = collectionView.frame.height
+        let itemsPerRow: CGFloat = 2
+        let widthPadding = sectionInsets.left * (itemsPerRow)
+        let itemsPerColumn: CGFloat = 3
+        let heightPadding = sectionInsets.top * (itemsPerColumn)
+        let cellWidth = (width - widthPadding) / itemsPerRow
+        let cellHeight = (height - heightPadding) / itemsPerColumn
+
+        return CGSize(width: cellWidth, height: cellHeight)
     }
 }

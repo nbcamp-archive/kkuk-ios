@@ -5,6 +5,7 @@
 //  Created by 장가겸 on 10/23/23.
 //
 
+import SnapKit
 import UIKit
 
 class AddCategoryCollectionViewCell: UICollectionViewCell {

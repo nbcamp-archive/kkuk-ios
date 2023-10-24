@@ -5,9 +5,24 @@
 //  Created by 장가겸 on 10/23/23.
 //
 
+import SnapKit
 import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
+    
+    private let textSizeOfheightSize: CGFloat = {
+        switch UIScreen.main.bounds.width {
+        case 400...:
+            return 37
+        case 380...:
+            return 33
+        case 370...:
+            return 20
+        default:
+            return 30
+        }
+    }()
+    
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.addArrangedSubview(titleLabel)
@@ -24,7 +39,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "동화책과 잭과 콩나무와 돌멩이와 맹구와 짱구"
+        label.text = "조제 호랑이 그리고 물고기들과 상어 장어 거북이"
         label.textColor = .background
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -72,10 +87,13 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         }
         
         stackView.snp.makeConstraints { make in
-            make.top.equalTo(titleImage.snp.bottom).offset(contentView.bounds.height / 4)
-            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(titleImage.snp.bottom).offset(textSizeOfheightSize)
+            make.leading.equalToSuperview().offset(8)
+            make.trailing.equalToSuperview().offset(-8)
             make.centerX.equalToSuperview()
         }
+        
+        print(textSizeOfheightSize)
 
         titleImage.setContentHuggingPriority(.defaultLow, for: .vertical)
         titleImage.setContentHuggingPriority(.defaultLow, for: .vertical)
