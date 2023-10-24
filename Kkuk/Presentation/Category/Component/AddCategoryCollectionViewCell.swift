@@ -53,8 +53,8 @@ class AddCategoryCollectionViewCell: UICollectionViewCell {
         titleLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
         
         contentView.layer.cornerRadius = 8.0
-        contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 0.33).cgColor
+        contentView.layer.borderWidth = 2
+        contentView.layer.borderColor = UIColor.subgray1.cgColor
     }
 
     @available(*, unavailable)
