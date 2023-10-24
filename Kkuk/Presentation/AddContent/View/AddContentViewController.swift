@@ -83,9 +83,35 @@ class AddContentViewController: BaseUIViewController {
         return label
     }()
     
+    private lazy var closeButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(systemItem: .close)
+        barButtonItem.target = self
+        return barButtonItem
+    }()
+    
     private lazy var addContentButton = AddContentButton(frame: .zero)
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        URLTextField.becomeFirstResponder()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setIQKeyboardManagerEnable(true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        setIQKeyboardManagerEnable(false)
+    }
+    
     override func setUI() {
+        setNavigationBar()
+        
         memoContainerView.addSubviews([memoTextView, memoTextCountLabel])
         
         view.addSubviews([induceURLLabel, induceMemoLabel, induceCategoryLabel,
@@ -143,6 +169,21 @@ class AddContentViewController: BaseUIViewController {
     
     override func addTarget() {}
     
+    override func setNavigationBar() {
+        title = "추가하기"
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [ NSAttributedString.Key.font: UIFont.body1 ]
+        appearance.backgroundColor = .white
+        appearance.shadowColor = .none
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+        let closeButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self,
+                                              action: #selector(closeButtonItemDidTap))
+        navigationItem.rightBarButtonItem = closeButtonItem
+    }
+    
 }
 
 // MARK: - 커스텀 메서드
@@ -164,11 +205,17 @@ extension AddContentViewController {
         }
     }
     
-    @objc func keyboardWillHide(_ notification: Notification) {
+    @objc
+    func keyboardWillHide(_ notification: Notification) {
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.addContentButton.transform = .identity
             self?.view.layoutIfNeeded()
         }
+    }
+    
+    @objc
+    private func closeButtonItemDidTap() {
+        dismiss(animated: true, completion: nil)
     }
     
 }
