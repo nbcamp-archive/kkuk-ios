@@ -91,7 +91,6 @@
 		1C2843B52ADD0DB000A87E99 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		1C2843B82ADD0DD400A87E99 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		1C2843BE2ADD0F5300A87E99 /* SearchContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContentViewController.swift; sourceTree = "<group>"; };
-		1C2843C42ADD0FA800A87E99 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		1C2843C72ADD0FD600A87E99 /* AddContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContentViewController.swift; sourceTree = "<group>"; };
 		1C2843CE2ADD11B600A87E99 /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
 		1C2843D02ADD2C5C00A87E99 /* BaseUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITableViewCell.swift; sourceTree = "<group>"; };
@@ -368,7 +367,6 @@
 		1C2843C32ADD0F9800A87E99 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				1C2843C42ADD0FA800A87E99 /* .gitkeep */,
 			);
 			path = Component;
 			sourceTree = "<group>";
