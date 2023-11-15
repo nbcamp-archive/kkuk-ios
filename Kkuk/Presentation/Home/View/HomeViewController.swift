@@ -74,7 +74,6 @@ final class HomeViewController: BaseUIViewController, UIScrollViewDelegate {
         control.currentPage = 0
         control.pageIndicatorTintColor = .subgray2
         control.currentPageIndicatorTintColor = .white
-//        control.allowsContinuousInteraction = false
         
         return control
     }()
@@ -285,15 +284,13 @@ extension HomeViewController {
 
 extension HomeViewController: ContentTableViewCellDelegate {
     func togglePin(index: Int) {
-        //        recentItems의 index번째가 false여야 true되니까 false면 5개인지 아닌지 체크.
         if recentItems[index].isPinned == false &&
-           bookmarkItems.count == 5 {
+            bookmarkItems.count == 5 {
             let alert = UIAlertController(title: nil, message: "콘텐츠 고정은 5개만 가능해요", preferredStyle: .alert)
             let ok = UIAlertAction(title: "확인", style: .default)
             alert.addAction(ok)
             self.present(alert, animated: true)
         } else {
-            //5개가 아니면 else이면 이 구문 실행.
             contentManager.update(content: self.recentItems[index]) { [weak self] content in
                 content.isPinned.toggle()
                 self?.updatePin(index: index)
