@@ -250,8 +250,9 @@ extension SearchContentViewController: UITableViewDataSource, UITableViewDelegat
 
 extension SearchContentViewController: ContentTableViewCellDelegate {
     func togglePin(index: Int) {
-        if contentList[index].isPinned == false {
-            let alert = UIAlertController(title: "콘텐츠 고정", message: "5개만 가능해요. 다른 콘텐츠 핀을 취소해보세요.", preferredStyle: .alert)
+        if contentList[index].isPinned == false &&
+            bookmarkItems.count == 5 {
+            let alert = UIAlertController(title: nil, message: "콘텐츠 고정은 5개만 가능해요", preferredStyle: .alert)
             let ok = UIAlertAction(title: "확인", style: .default)
             alert.addAction(ok)
             self.present(alert, animated: true)

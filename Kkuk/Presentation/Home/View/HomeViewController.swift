@@ -288,7 +288,7 @@ extension HomeViewController: ContentTableViewCellDelegate {
         //        recentItems의 index번째가 false여야 true되니까 false면 5개인지 아닌지 체크.
         if recentItems[index].isPinned == false &&
            bookmarkItems.count == 5 {
-            let alert = UIAlertController(title: "콘텐츠 고정", message: "5개만 가능해요. 다른 콘텐츠 핀을 취소해보세요.", preferredStyle: .alert)
+            let alert = UIAlertController(title: nil, message: "콘텐츠 고정은 5개만 가능해요", preferredStyle: .alert)
             let ok = UIAlertAction(title: "확인", style: .default)
             alert.addAction(ok)
             self.present(alert, animated: true)
