@@ -19,19 +19,6 @@ class CategoryTableViewCell: BaseUITableViewCell {
     private var category: Category?
     private var id: Int?
     
-    private let textSizeOfheightSize: CGFloat = {
-        switch UIScreen.main.bounds.width {
-        case 400...:
-            return 37
-        case 380...:
-            return 33
-        case 370...:
-            return 20
-        default:
-            return 30
-        }
-    }()
-    
     private lazy var titleImage: UIImageView = {
         let imageView = UIImageView()
         let image = UIImage(systemName: "plus")
