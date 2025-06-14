@@ -1,6 +1,6 @@
 ![Banner Frame](https://github.com/nbcamp-archive/kkuk-ios/assets/26790710/44c6de6f-22bc-4be2-bd6f-318f3ba77e60)
 
-<div align="center"> 
+<div align="center">
   
 [<img width="200" alt="appstore" src="https://github.com/nbcamp-archive/kkuk-ios/assets/26790710/72caf6ff-b829-4608-98d9-16d42d0a3eb0">](https://apps.apple.com/kr/app/kkuk/id6471813268)
 
@@ -8,7 +8,10 @@
 
 # kkuk-ios
 
-<img src="https://img.shields.io/badge/Xcode_14+-147EFB?style=flat&logo=Xcode&logoColor=FFF" /> <img src="https://img.shields.io/badge/iOS_15+-000?style=flat&logo=Apple&logoColor=FFF" /> <img src="https://img.shields.io/badge/Swift_5-F05138?style=flat&logo=Swift&logoColor=FFF" /> <img src="https://img.shields.io/badge/UIKit-2396F3?style=flat&logo=UIKit&logoColor=000" /> <img src="https://img.shields.io/badge/RealmSwift-39477F?style=flat&logo=Realm&logoColor=FFF" /> 
+> [!Important]
+> 이 저장소는 더 이상 유지관리되지 않으며, 진행 중인 [후속 프로젝트](https://github.com/nbcamp-archive/kkuk-ios-rebuild)로 이동해 새로운 내용을 볼 수 있습니다.
+
+<img src="https://img.shields.io/badge/Xcode_14+-147EFB?style=flat&logo=Xcode&logoColor=FFF" /> <img src="https://img.shields.io/badge/iOS_15+-000?style=flat&logo=Apple&logoColor=FFF" /> <img src="https://img.shields.io/badge/Swift_5-F05138?style=flat&logo=Swift&logoColor=FFF" /> <img src="https://img.shields.io/badge/UIKit-2396F3?style=flat&logo=UIKit&logoColor=000" /> <img src="https://img.shields.io/badge/RealmSwift-39477F?style=flat&logo=Realm&logoColor=FFF" />
 
 ## Overview
 
